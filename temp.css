@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+#start1{
+  font-family: Comic Sans MS;
+  font-size: 50px;
+  position:absolute;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transition: 1s ease;
+}
+#ball{
+  position:absolute;
+  margin: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  margin-top: 60px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: yellow;
+  transition: 5ms;
+  z-index: -1;
+}
+#bar1{
+  position:absolute;
+  margin: 0;
+  border-radius: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  bottom: 14px;
+  height:50px;
+  width:250px;
+  background-color: blue;
+  transition: 10ms;
+}
+#bar2{
+  position:absolute;
+  margin: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  border-radius: 50px;
+  top: 10px;
+  height:50px;
+  width:250px;
+  background-color: red;
+  transition: 10ms;
+}
