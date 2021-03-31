@@ -1,16 +1,3 @@
-function preventZoom(e) {
-  var t2 = e.timeStamp;
-  var t1 = e.currentTarget.dataset.lastTouch || t2;
-  var dt = t2 - t1;
-  var fingers = e.touches.length;
-  e.currentTarget.dataset.lastTouch = t2;
-
-  if (!dt || dt > 500 || fingers > 1) return; // not double-tap
-
-  e.preventDefault();
-  e.target.click();
-}
-document.addEventListener('touchstart', preventZoom);
 
 var bar1=document.getElementById('bar1');
 var bar2=document.getElementById('bar2');
@@ -32,7 +19,6 @@ arrowleft.addEventListener('click',function(event){
 arrowright.addEventListener('click',function(event){
   arrowright.style.cursor="grabbing";
   setTimeout(function(){arrowright.style.cursor="grab";},100);
-  console.log(1);
   if((bar1.offsetLeft)<window.innerWidth-125){
     bar1.style.marginLeft=bar1.offsetLeft+25+'px';
     bar2.style.marginLeft=bar2.offsetLeft+25+'px';
