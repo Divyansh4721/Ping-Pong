@@ -76,7 +76,7 @@ span{
   height:50px;
   width:250px;
   background-color: blue;
-  transition: 10ms;
+  transition: 50ms;
 }
 #bar2{
   position:absolute;
@@ -89,5 +89,5 @@ span{
   height:50px;
   width:250px;
   background-color: red;
-  transition: 10ms;
+  transition: 50ms;
 }

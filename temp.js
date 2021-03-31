@@ -22,7 +22,7 @@ function left(){
       bar1.style.marginLeft=bar1.offsetLeft-25+'px';
       bar2.style.marginLeft=bar2.offsetLeft-25+'px';
     }
-  },100);
+  },50);
   leftcount=1;
 }
 else{
@@ -37,7 +37,7 @@ function right(){
       bar1.style.marginLeft=bar1.offsetLeft+25+'px';
       bar2.style.marginLeft=bar2.offsetLeft+25+'px';
     }
-  },100);
+  },50);
   rightcount=1;
 }
 else{
@@ -57,6 +57,8 @@ enter.addEventListener('click',function(){
   score.innerText=Count;
   setTimeout(function(){score.style.opacity=100;},1000);
   btmlft();
+  body.style.backgroundColor='black';
+  score.style.color='white';
 });
 window.addEventListener('keypress',function(event){
   if(event.key=='a')
@@ -137,7 +139,7 @@ function btmrgt(){
       var left=minus/degree;
       ball.style.marginLeft=offsetleft+left+'px';
     }
-  },40);
+  },30);
 }
 function btmlft(){
   var angle=random();
@@ -171,7 +173,7 @@ function btmlft(){
       var left=minus/degree;
       ball.style.marginLeft=offsetleft-left+'px';
     }
-  },40);
+  },30);
 }
 function toplft(){
   var angle=random();
@@ -205,7 +207,7 @@ function toplft(){
       var left=minus/degree;
       ball.style.marginLeft=offsetleft-left+'px';
     }
-  },40);
+  },30);
 }
 function toprgt(){
   var angle=random();
@@ -239,5 +241,5 @@ function toprgt(){
       var left=minus/degree;
       ball.style.marginLeft=offsetleft+left+'px';
     }
-  },40);
+  },30);
 }
