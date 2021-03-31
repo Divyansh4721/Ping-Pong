@@ -1,12 +1,16 @@
-var time_stamp = 0; // Or Date.now()
-window.addEventListener("click", function(event_) {
-    if (event_.timeStamp - time_stamp < 300) { // A tap that occurs less than 300 ms from the last tap will trigger a double tap. This delay may be different between browsers.
-        event_.preventDefault();
-        return false;
-    }
-    time_stamp = event_.timeStamp;
-});
+function preventZoom(e) {
+  var t2 = e.timeStamp;
+  var t1 = e.currentTarget.dataset.lastTouch || t2;
+  var dt = t2 - t1;
+  var fingers = e.touches.length;
+  e.currentTarget.dataset.lastTouch = t2;
 
+  if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+  e.preventDefault();
+  e.target.click();
+}
+document.addEventListener('touchstart', preventZoom);
 
 var bar1=document.getElementById('bar1');
 var bar2=document.getElementById('bar2');

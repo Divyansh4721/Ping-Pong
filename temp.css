@@ -5,9 +5,6 @@ body {
   width: 100vw;
   overflow: hidden;
 }
-.disable-doubletap-to-zoom {
-    touch-action: none;
-}
 #start1{
   font-family: Comic Sans MS;
   font-size: 50px;
