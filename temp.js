@@ -8,7 +8,7 @@ var arrowright=document.getElementById('arrowright');
 var enter=document.getElementById('enter');
 var Count=0;
 alert("Ping-Pong Game By Divyansh");
-arrowleft.addEventListener('click',function(event){
+arrowleft.addEventListener('touchstart',function(event){
   arrowleft.style.cursor="grabbing";
   setTimeout(function(){arrowleft.style.cursor="grab";},100);
   if(bar1.offsetLeft>125){
@@ -16,7 +16,7 @@ arrowleft.addEventListener('click',function(event){
     bar2.style.marginLeft=bar2.offsetLeft-25+'px';
   }
 });
-arrowright.addEventListener('click',function(event){
+arrowright.addEventListener('touchstart',function(event){
   arrowright.style.cursor="grabbing";
   setTimeout(function(){arrowright.style.cursor="grab";},100);
   if((bar1.offsetLeft)<window.innerWidth-125){
