@@ -16,6 +16,45 @@ body {
   -ms-transform: translate(-50%,-50%);
   transition: 1s ease;
 }
+#score{
+  font-family: Comic Sans MS;
+  font-size: 150px;
+  position:absolute;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  opacity: 0;
+  transition: 1s ease;
+  z-index: -2;
+}
+span{
+  background-color: grey;
+  cursor: grab;
+}
+#arrowleft{
+  position:absolute;
+  margin: 0;
+  font-size: 50px;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  cursor: grab;
+  transition: 1s ease;
+}
+#arrowright{
+  position:absolute;
+  margin: 0;
+  font-size: 50px;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transition: 1s ease;
+  cursor: grab;
+}
 #ball{
   position:absolute;
   margin: 0;

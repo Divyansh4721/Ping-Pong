@@ -2,8 +2,36 @@ var bar1=document.getElementById('bar1');
 var bar2=document.getElementById('bar2');
 var ball=document.getElementById('ball');
 var start1=document.getElementById('start1');
+var arrowleft=document.getElementById('arrowleft');
+var arrowright=document.getElementById('arrowright');
+var enter=document.getElementById('enter');
 var Count=0;
 alert("Ping-Pong Game By Divyansh");
+arrowleft.addEventListener('click',function(event){
+  arrowleft.style.cursor="grabbing";
+  setTimeout(function(){arrowleft.style.cursor="grab";},100);
+  if(bar1.offsetLeft>125){
+    bar1.style.marginLeft=bar1.offsetLeft-25+'px';
+    bar2.style.marginLeft=bar2.offsetLeft-25+'px';
+  }
+});
+arrowright.addEventListener('click',function(event){
+  arrowright.style.cursor="grabbing";
+  setTimeout(function(){arrowright.style.cursor="grab";},100);
+  console.log(1);
+  if((bar1.offsetLeft)<window.innerWidth-125){
+    bar1.style.marginLeft=bar1.offsetLeft+25+'px';
+    bar2.style.marginLeft=bar2.offsetLeft+25+'px';
+  }
+});
+enter.addEventListener('click',function(event){
+  enter.style.cursor="grabbing";
+  setTimeout(function(){enter.style.cursor="grab";},100);
+  start1.style.opacity=0;
+  score.innerText=Count;
+  setTimeout(function(){score.style.opacity=100;},1000);
+  btmlft();
+});
 document.addEventListener('keypress',function(event){
   if(event.key=='a')
   {
@@ -22,6 +50,8 @@ document.addEventListener('keypress',function(event){
   if(event.key=='Enter')
   {
     start1.style.opacity=0;
+    score.innerText=Count;
+    setTimeout(function(){score.style.opacity=100;},1000);
     btmlft();
   }
 });
@@ -29,6 +59,7 @@ document.addEventListener('keypress',function(event){
 function reset(){
   Count=0;
   start1.style.opacity=100;
+  score.style.opacity=0;
   bar1.style.marginLeft='50%';
   bar2.style.marginLeft='50%';
   ball.style.marginLeft='50%';
@@ -56,6 +87,7 @@ function btmrgt(){
       if(bar1.offsetLeft<ball.offsetLeft-25+125 && bar1.offsetLeft+250>ball.offsetLeft-25+125+50){
         clearInterval(br);
         Count++;
+        score.innerText=Count;
         toprgt();
       }
     }
@@ -89,6 +121,7 @@ function btmlft(){
       if(bar1.offsetLeft<ball.offsetLeft-25+125 && bar1.offsetLeft+250>ball.offsetLeft-25+125+50){
         clearInterval(br);
         Count++;
+        score.innerText=Count;
         toplft();
       }
     }
@@ -121,6 +154,7 @@ function toplft(){
       if(bar2.offsetLeft<ball.offsetLeft-25+125 && bar2.offsetLeft+250>ball.offsetLeft-25+125+50){
         clearInterval(br);
         Count++;
+        score.innerText=Count;
         btmlft();
       }
     }
@@ -153,6 +187,7 @@ function toprgt(){
       if(bar2.offsetLeft<ball.offsetLeft-25+125 && bar2.offsetLeft+250>ball.offsetLeft-25+125+50){
         clearInterval(br);
         Count++;
+        score.innerText=Count;
         btmrgt();
       }
     }
