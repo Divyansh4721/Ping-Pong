@@ -7,7 +7,7 @@ var arrowleft=document.getElementById('arrowleft');
 var arrowright=document.getElementById('arrowright');
 var enter=document.getElementById('enter');
 var Count=0;
-alert("Ping-Pong Game By Divyansh");
+//alert("Ping-Pong Game By Divyansh");
 arrowleft.addEventListener('touchstart',function(event){
   arrowleft.style.cursor="grabbing";
   setTimeout(function(){arrowleft.style.cursor="grab";},100);
