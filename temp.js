@@ -31,8 +31,9 @@ function right(){
 }
 arrowleft.addEventListener('touchstart',left);
 arrowright.addEventListener('touchstart',right);
-arrowleft.addEventListener('touchend',clearInterval(leftmove);
-arrowright.addEventListener('touchend',clearInterval(rightmove);
+arrowleft.addEventListener('touchend',clearInterval(leftmove));
+arrowright.addEventListener('touchend',clearInterval(rightmove));
+
 enter.addEventListener('click',function(){
   enter.style.cursor="grabbing";
   setTimeout(function(){enter.style.cursor="grab";},100);
