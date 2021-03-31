@@ -5,9 +5,8 @@ body {
   width: 100vw;
   overflow: hidden;
 }
-* {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
+.disable-doubletap-to-zoom {
+    touch-action: none;
 }
 #start1{
   font-family: Comic Sans MS;
