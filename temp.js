@@ -13,26 +13,42 @@ var Count=0;
 //alert("Ping-Pong Game By Divyansh");
 var leftmove;
 var rightmove;
+leftcount=0;
+rightcount=0;
 function left(){
+  if(leftcount==0){
   leftmove=setInterval(function(){
     if(bar1.offsetLeft>125){
       bar1.style.marginLeft=bar1.offsetLeft-25+'px';
       bar2.style.marginLeft=bar2.offsetLeft-25+'px';
     }
   },100);
+  leftcount=1;
+}
+else{
+  clearInterval(leftmove);
+  leftcount=0;
+}
 }
 function right(){
+  if(rightcount==0){
   rightmove=setInterval(function(){
     if((bar1.offsetLeft)<window.innerWidth-125){
       bar1.style.marginLeft=bar1.offsetLeft+25+'px';
       bar2.style.marginLeft=bar2.offsetLeft+25+'px';
     }
   },100);
+  rightcount=1;
+}
+else{
+  clearInterval(rightmove);
+  rightcount=0;
+}
 }
 arrowleft.addEventListener('touchstart',left);
 arrowright.addEventListener('touchstart',right);
-arrowleft.addEventListener('touchend',clearInterval(leftmove));
-arrowright.addEventListener('touchend',clearInterval(rightmove));
+arrowleft.addEventListener('touchend',left);
+arrowright.addEventListener('touchend',right);
 
 enter.addEventListener('click',function(){
   enter.style.cursor="grabbing";
