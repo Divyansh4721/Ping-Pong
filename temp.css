@@ -5,6 +5,10 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+* {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
 #start1{
   font-family: Comic Sans MS;
   font-size: 50px;
