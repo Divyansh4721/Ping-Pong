@@ -4,6 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  transition: 1s;
 }
 #start1{
   font-family: Comic Sans MS;
@@ -14,11 +15,12 @@ body {
   top: 50%;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
-  transition: 1s ease;
+  transition: 0.5s ease;
 }
 #score{
-  font-family: Comic Sans MS;
+  font-family: Algerian;
   font-size: 150px;
+  color: white;
   position:absolute;
   margin: 0;
   left: 50%;
@@ -31,6 +33,7 @@ body {
 }
 span{
   background-color: grey;
+  color: black;
   cursor: grab;
 }
 #arrowleft{
