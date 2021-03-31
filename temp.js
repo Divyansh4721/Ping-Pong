@@ -1,5 +1,5 @@
 var time_stamp = 0; // Or Date.now()
-window.addEventListener("touchstart", function(event_) {
+window.addEventListener("click", function(event_) {
     if (event_.timeStamp - time_stamp < 300) { // A tap that occurs less than 300 ms from the last tap will trigger a double tap. This delay may be different between browsers.
         event_.preventDefault();
         return false;
@@ -42,7 +42,7 @@ enter.addEventListener('click',function(event){
   setTimeout(function(){score.style.opacity=100;},1000);
   btmlft();
 });
-document.addEventListener('keypress',function(event){
+window.addEventListener('keypress',function(event){
   if(event.key=='a')
   {
     if(bar1.offsetLeft>125){
