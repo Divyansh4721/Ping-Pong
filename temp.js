@@ -89,6 +89,7 @@ window.addEventListener('keypress',function(event){
 function reset(){
   Count=0;
   start1.style.opacity=100;
+  body.style.backgroundColor='white';
   score.style.opacity=0;
   bar1.style.marginLeft='50%';
   bar2.style.marginLeft='50%';
