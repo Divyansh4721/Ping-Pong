@@ -1,18 +1,18 @@
-
-var bar1=document.getElementById('bar1');
-var bar2=document.getElementById('bar2');
-var ball=document.getElementById('ball');
-var start1=document.getElementById('start1');
-var arrowleft=document.getElementById('arrowleft');
-var arrowright=document.getElementById('arrowright');
-var body=document.getElementById('body');
-var score=document.getElementById('score');
-var enter=document.getElementById('enter');
-var audio=new Audio("sound.wav");
-var Count=0;
-//alert("Ping-Pong Game By Divyansh");
-var leftmove;
-var rightmove;
+{
+let bar1=document.getElementById('bar1');
+let bar2=document.getElementById('bar2');
+let ball=document.getElementById('ball');
+let start1=document.getElementById('start1');
+let arrowleft=document.getElementById('arrowleft');
+let arrowright=document.getElementById('arrowright');
+let body=document.getElementById('body');
+let score=document.getElementById('score');
+let enter=document.getElementById('enter');
+let audio=new Audio("sound.wav");
+let Count=0;
+alert("Ping-Pong Game By Divyansh");
+let leftmove;
+let rightmove;
 leftcount=0;
 rightcount=0;
 function left(){
@@ -45,10 +45,6 @@ function right(){
     rightcount=0;
   }
 }
-arrowleft.addEventListener('touchstart',left);
-arrowright.addEventListener('touchstart',right);
-arrowleft.addEventListener('touchend',left);
-arrowright.addEventListener('touchend',right);
 window.addEventListener('keypress',function(event){
   if(event.key=='Enter')
   {
@@ -73,6 +69,11 @@ enter.addEventListener('click',function(){
   gamestarted();
 });
 function gamestarted() {
+
+  arrowleft.addEventListener('touchstart',left);
+  arrowright.addEventListener('touchstart',right);
+  arrowleft.addEventListener('touchend',left);
+  arrowright.addEventListener('touchend',right);
   window.addEventListener('keypress',function(event){
     if(event.key=='a')
     {
@@ -114,10 +115,10 @@ function random(){
   return Math.floor((Math.random()*30)+30);
 }
 function btmrgt(){
-  var angle=random();
-  var offsetleft=ball.offsetLeft;
-  var minus=0;
-  var br=setInterval(function()
+  let angle=random();
+  let offsetleft=ball.offsetLeft;
+  let minus=0;
+  let br=setInterval(function()
   {
     if(ball.offsetTop>=bar1.offsetTop-55){
       if(bar1.offsetLeft<ball.offsetLeft-25+125 && bar1.offsetLeft+250>ball.offsetLeft-25+125+50){
@@ -138,21 +139,21 @@ function btmrgt(){
       btmlft();
     }
     else{
-      var btm=ball.offsetTop;
+      let btm=ball.offsetTop;
       ball.style.marginTop=btm+5+'px';
-      minus=minus+10;
-      var degree=getTanFromDegrees(angle);
-      var left=minus/degree;
+      minus=minus+5;
+      let degree=getTanFromDegrees(angle);
+      let left=minus/degree;
       ball.style.marginLeft=offsetleft+left+'px';
     }
-  },30);
+  },15);
 }
 function btmlft(){
-  var angle=random();
-  var degree=getTanFromDegrees(angle);
-  var offsetleft=ball.offsetLeft;
-  var minus=0;
-  var br=setInterval(function()
+  let angle=random();
+  let degree=getTanFromDegrees(angle);
+  let offsetleft=ball.offsetLeft;
+  let minus=0;
+  let br=setInterval(function()
   {
     if(ball.offsetTop>=bar1.offsetTop-55){
       if(bar1.offsetLeft<ball.offsetLeft-25+125 && bar1.offsetLeft+250>ball.offsetLeft-25+125+50){
@@ -173,20 +174,20 @@ function btmlft(){
       btmrgt();
     }
     else{
-      var btm=ball.offsetTop;
+      let btm=ball.offsetTop;
       ball.style.marginTop=btm+5+'px';
-      minus=minus+10;
-      var left=minus/degree;
+      minus=minus+5;
+      let left=minus/degree;
       ball.style.marginLeft=offsetleft-left+'px';
     }
-  },30);
+  },15);
 }
 function toplft(){
-  var angle=random();
-  var degree=getTanFromDegrees(angle);
-  var offsetleft=ball.offsetLeft;
-  var minus=0;
-  var br=setInterval(function()
+  let angle=random();
+  let degree=getTanFromDegrees(angle);
+  let offsetleft=ball.offsetLeft;
+  let minus=0;
+  let br=setInterval(function()
   {
     if(ball.offsetTop<=65){
       if(bar2.offsetLeft<ball.offsetLeft-25+125 && bar2.offsetLeft+250>ball.offsetLeft-25+125+50){
@@ -207,20 +208,20 @@ function toplft(){
       toprgt();
     }
     else{
-      var btm=ball.offsetTop;
+      let btm=ball.offsetTop;
       ball.style.marginTop=btm-5+'px';
-      minus=minus+10;
-      var left=minus/degree;
+      minus=minus+5;
+      let left=minus/degree;
       ball.style.marginLeft=offsetleft-left+'px';
     }
-  },30);
+  },15);
 }
 function toprgt(){
-  var angle=random();
-  var degree=getTanFromDegrees(angle);
-  var offsetleft=ball.offsetLeft;
-  var minus=0;
-  var br=setInterval(function()
+  let angle=random();
+  let degree=getTanFromDegrees(angle);
+  let offsetleft=ball.offsetLeft;
+  let minus=0;
+  let br=setInterval(function()
   {
     if(ball.offsetTop<=65){
       if(bar2.offsetLeft<ball.offsetLeft-25+125 && bar2.offsetLeft+250>ball.offsetLeft-25+125+50){
@@ -241,11 +242,12 @@ function toprgt(){
       toplft();
     }
     else{
-      var btm=ball.offsetTop;
+      let btm=ball.offsetTop;
       ball.style.marginTop=btm-5+'px';
-      minus=minus+10;
-      var left=minus/degree;
+      minus=minus+5;
+      let left=minus/degree;
       ball.style.marginLeft=offsetleft+left+'px';
     }
-  },30);
+  },15);
+}
 }
