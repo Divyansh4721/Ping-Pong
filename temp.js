@@ -17,39 +17,50 @@ leftcount=0;
 rightcount=0;
 function left(){
   if(leftcount==0){
-  leftmove=setInterval(function(){
-    if(bar1.offsetLeft>125){
-      bar1.style.marginLeft=bar1.offsetLeft-25+'px';
-      bar2.style.marginLeft=bar2.offsetLeft-25+'px';
-    }
-  },50);
-  leftcount=1;
-}
-else{
-  clearInterval(leftmove);
-  leftcount=0;
-}
+    leftmove=setInterval(function(){
+      if(bar1.offsetLeft>125){
+        bar1.style.marginLeft=bar1.offsetLeft-25+'px';
+        bar2.style.marginLeft=bar2.offsetLeft-25+'px';
+      }
+    },10);
+    leftcount=1;
+  }
+  else{
+    clearInterval(leftmove);
+    leftcount=0;
+  }
 }
 function right(){
   if(rightcount==0){
-  rightmove=setInterval(function(){
-    if((bar1.offsetLeft)<window.innerWidth-125){
-      bar1.style.marginLeft=bar1.offsetLeft+25+'px';
-      bar2.style.marginLeft=bar2.offsetLeft+25+'px';
-    }
-  },50);
-  rightcount=1;
-}
-else{
-  clearInterval(rightmove);
-  rightcount=0;
-}
+    rightmove=setInterval(function(){
+      if((bar1.offsetLeft)<window.innerWidth-125){
+        bar1.style.marginLeft=bar1.offsetLeft+25+'px';
+        bar2.style.marginLeft=bar2.offsetLeft+25+'px';
+      }
+    },10);
+    rightcount=1;
+  }
+  else{
+    clearInterval(rightmove);
+    rightcount=0;
+  }
 }
 arrowleft.addEventListener('touchstart',left);
 arrowright.addEventListener('touchstart',right);
 arrowleft.addEventListener('touchend',left);
 arrowright.addEventListener('touchend',right);
-
+window.addEventListener('keypress',function(event){
+  if(event.key=='Enter')
+  {
+    start1.style.opacity=0;
+    score.innerText=Count;
+    setTimeout(function(){score.style.opacity=100;},1000);
+    btmlft();
+    body.style.backgroundColor='black';
+    score.style.color='white';
+    gamestarted();
+  }
+});
 enter.addEventListener('click',function(){
   enter.style.cursor="grabbing";
   setTimeout(function(){enter.style.cursor="grab";},100);
@@ -59,32 +70,26 @@ enter.addEventListener('click',function(){
   btmlft();
   body.style.backgroundColor='black';
   score.style.color='white';
+  gamestarted();
 });
-window.addEventListener('keypress',function(event){
-  if(event.key=='a')
-  {
-    if(bar1.offsetLeft>125){
-      bar1.style.marginLeft=bar1.offsetLeft-25+'px';
-      bar2.style.marginLeft=bar2.offsetLeft-25+'px';
+function gamestarted() {
+  window.addEventListener('keypress',function(event){
+    if(event.key=='a')
+    {
+      if(bar1.offsetLeft>125){
+        bar1.style.marginLeft=bar1.offsetLeft-25+'px';
+        bar2.style.marginLeft=bar2.offsetLeft-25+'px';
+      }
     }
-  }
-  if(event.key=='d')
-  {
-    if((bar1.offsetLeft)<window.innerWidth-125){
-      bar1.style.marginLeft=bar1.offsetLeft+25+'px';
-      bar2.style.marginLeft=bar2.offsetLeft+25+'px';
+    if(event.key=='d')
+    {
+      if((bar1.offsetLeft)<window.innerWidth-125){
+        bar1.style.marginLeft=bar1.offsetLeft+25+'px';
+        bar2.style.marginLeft=bar2.offsetLeft+25+'px';
+      }
     }
-  }
-  if(event.key=='Enter')
-  {
-    start1.style.opacity=0;
-    score.innerText=Count;
-    setTimeout(function(){score.style.opacity=100;},1000);
-    btmlft();
-    body.style.backgroundColor='black';
-    score.style.color='white';
-  }
-});
+  });
+}
 
 function reset(){
   Count=0;
